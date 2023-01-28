@@ -1,0 +1,48 @@
+Tecnologias ultilizadas: Python(fastApi, ORM SqlAlchemy), javascript(Ajax), HTML,CSS, bootstrap, SQlite e Arquitetura MVC.
+
+Resumo:
+Projeto juntando todos os conceitos aprendidos sobre html,css, javascript, python e banco de dados nesse caso pela simplicidade
+foi ultilizado o sqlite.
+então fiz tanto a parte do backend que é minha api com o fastApi do python e o front-end que uso o javascript, html, css e algumas coisas do
+bootstrap.Então eu consumo a minha api com o ajax e cadastro e logo usuarios com o python no banco de dados.
+O projeto esta divido em 2 pastas uma backend e outra front-end na pasta front-end tenho meu index.html que é a minha interface, style.css que
+é os meus estilos dessa interface, e tenho um arquivo server.py que é o servidor que esta renderizando minha pagina, não uso framework, crio
+uma funçaõ que manda algumas informações pro meu servidor conseguir renderizar essa pagina, na minha pasta backend tenho um arquivo models.py
+onde estão meus 2 modelos do banco de dados, tenho um arquivo controler.py que é onde esta minha api, tenho tambem um arquivo sqlite.db que é
+meu banco de dados. então o foco do projeto não é a interface em si ou a validação dos campos mas sim simular um front end rodando num servidor
+e o backend rodando em outro servidor e fazer a comunicação entre eles, tanto que o servidor que sustenta a pagina html roda no ip localhost
+mas na porta 5001 ja o backend roda tambem em localhost mas na port 5000, faço essa comunicação atraves de requisições do ajax para a api.
+
+FRONT-END:
+Marco minha pagina com o html, faço a estilização com o css e alguns botões e as mensagens de retorno para os usuarios com o bootstrap.
+Faço a requisição pra minha Api com o Ajax do javascript, tenho 3 funções que faz essas requisições para cada um dos end-points da Api, 
+manipulo elementos do html com o DOM, manipulo eventos do click do mouse que chamam as funções e tambem armazeno o token retornado no 
+LocalStorage.
+
+BACKEND:
+
+meu models.py tem a criação das minhas 2 tabelas no db que é a tabela pessoa e a tabela tokens, tabela pessoa com as colunas:id,usuario,email e 
+senha, tabela tokens com as colunas: id, id da pessoa daquele token e data da geração do token, a manipulação desse banco de dados é atraves do
+ORM SqlAlchemy.
+
+Minha Api testa na controler.py e tem tres end-points /cadastro que vai cadastrar o usuario no banco de dados, /login que vai gerar um token
+de acesso valido por 3 minutos e /validaToken que valida e loga o usuario.
+
+Abaixo os retornos da Api.
+
+1 - /cadastro         retornos: erro: 5 = email invalido, deve ter @gmail.com, outlook.com...
+                                erro: 4 = quando algum campo não é enviado.
+                                erro: 3 = alguma execeção na hora de salvar os dados no DB.
+                                erro: 2 = usuario ja cadastrado.
+                                erro: 1 = senha deve ser maior que 6 digitos.
+                                erro: 0 = tudo certo, cadastro realizado.
+----------------------------------------------------------------------------------------------
+2 - /login retornos:            erro: 4 = quando algum campo não é enviado.
+                                erro: 2 = senha invalida.
+                                erro: 1 = email invalido.
+                                erro: 0 = tudo certo, token gerado.
+----------------------------------------------------------------------------------------------
+
+3 - /validaToken retornos:      erro: 4 = quando algum campo não é enviado.
+                                erro: 1 = token expirado.
+                                erro: 0 = tudo certo, token valido, login realizado.

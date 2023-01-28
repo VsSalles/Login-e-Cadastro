@@ -1,0 +1,83 @@
+
+.texts{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 60px;
+}
+.inps{
+    position: relative;
+    left: 260px;
+    width: 400px;
+    
+}
+.labels{
+    position: relative;
+    left: 260px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    font-size: 30px;
+    font-style: italic;
+}  
+#link{
+    position: relative;
+    left: 260px;
+    margin-top: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 20px;
+
+}
+#form-login{
+    margin-top: 20px;
+}
+
+#btn-cadastro{
+    position: relative;
+    left: 360px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    height: 50px;
+    width: 180px;
+    font-size: 20px;
+
+}
+
+#form-login{
+    border: 2px solid black;
+    height: 450px;
+    margin-top: 90px;
+    width: 900px;
+    border-radius: 20px;
+
+}
+
+#btn-token{
+    position: relative;
+    left: 360px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    height: 50px;
+    width: 180px;
+    font-size: 20px;
+}
+
+#para_l{
+    position: relative;
+    left: 320px;
+}
+
+#form-cadastro{
+    border: 2px solid black;
+    height: 600px;
+    margin-top: 90px;
+    width: 900px;
+    border-radius: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif
+
+}
+
+#form-login h1{
+    padding: 30px;
+
+}
